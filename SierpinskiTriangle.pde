@@ -51,7 +51,7 @@ public void draw() {
  
 }
 public void s(float x, float y, float len) {
-  if (len<=7) { 
+  if (len<=8) { 
     triangle(x, y, x+(len), y, x+len/2, y-len);
   } else { 
     s(x, y, len/2); 
