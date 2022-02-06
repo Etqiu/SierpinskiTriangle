@@ -24,7 +24,6 @@ public void draw() {
       for (int i = 0; i<blinky.length; i++) {
     blinky[i].show();
   }
-  i+=1;
   if (i>15000) {
     noLoop();
   }
