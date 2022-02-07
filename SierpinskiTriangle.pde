@@ -5,6 +5,7 @@ Star[]blinky = new Star[200];
  int x = 255;
  int y =255;
  int z = 255;
+ float v = 5;
 public void setup() { 
   size(1000, 1000);
   frameRate(60);
@@ -15,18 +16,18 @@ public void setup() {
  
 } 
 public void draw() { 
-
+ text("Speed:" +v, 500,500);
   background(0);
- 
- stroke(x,y,z);
-      fill(x,y,z);
-  s(250, 750, i);
-      for (int i = 0; i<blinky.length; i++) {
+ System.out.println(v);
+
+        for (int i = 0; i<blinky.length; i++) {
     blinky[i].show();
   }
-  if (i>15000) {
-    noLoop();
-  }
+     stroke(x,y,z);
+      fill(x,y,z);
+   s(250, 750, i);
+   
+
   if (i >width+500)
   {     
     i/=2;
@@ -34,11 +35,14 @@ public void draw() {
   if(keyPressed){
     if(key == 'w'){
        
-      i+=50;
+      i+=v;
+      v*=1.1;
+      
     }
     if(key =='s'){
       
-      i-=25;
+      i-=v;
+      v*=1.1;
       stroke(255);
       fill(0);
       if(i<width){
@@ -46,11 +50,14 @@ public void draw() {
       
       }
     }
+    if(v>60){
+      v=60;
+    }
   }
  
 }
 public void s(float x, float y, float len) {
-  if (len<=20) { 
+  if (len<=15) { 
     triangle(x, y, x+(len), y, x+len/2, y-len);
   } else { 
     s(x, y, len/2); 
@@ -64,6 +71,14 @@ public void mouseWheel() {
   z =(int)(Math.random() * 155) + 100;
   fill((int)(Math.random() * 155) + 100, (int)(Math.random() * 155) + 100, (int)(Math.random() * 155) + 100);
 }
+public void keyReleased(){
+
+    v=5;
+    if(v<=0){
+      v=1;
+    }
+}
+  
 class Star{
   private float positionX, positionY;
   private float mySize;
