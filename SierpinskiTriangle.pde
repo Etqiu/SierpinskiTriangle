@@ -16,8 +16,8 @@ public void setup() {
  
 } 
 public void draw() { 
- text("Speed:" +v, 500,500);
-  background(0);
+background(0);
+  
 
 
         for (int i = 0; i<blinky.length; i++) {
@@ -34,10 +34,10 @@ public void draw() {
   }
   if(keyPressed){
     if(key == 'w'){
-       
+     
       i+=v;
       v*=1.1;
-      
+
     }
     if(key =='s'){
       
@@ -47,7 +47,6 @@ public void draw() {
       fill(0);
       if(i<width){
         i*=2;
-      
       }
     }
     if(v>60){
