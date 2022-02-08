@@ -18,7 +18,7 @@ public void setup() {
 public void draw() { 
  text("Speed:" +v, 500,500);
   background(0);
- System.out.println(v);
+
 
         for (int i = 0; i<blinky.length; i++) {
     blinky[i].show();
