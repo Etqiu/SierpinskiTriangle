@@ -65,7 +65,7 @@ public void s(float x, float y, float len) {
     s(x+len/4, y-len/2, len/2);
   }
 }
-public void mouseWheel() {
+public void mousePressed() {
   x =(int)(Math.random() * 155) + 100;
   y= (int)(Math.random() * 155) + 100;
   z =(int)(Math.random() * 155) + 100;
